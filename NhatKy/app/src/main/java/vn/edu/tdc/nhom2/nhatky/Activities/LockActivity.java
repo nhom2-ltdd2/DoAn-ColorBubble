@@ -2,12 +2,14 @@ package vn.edu.tdc.nhom2.nhatky.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.andrognito.patternlockview.PatternLockView;
 import com.andrognito.patternlockview.listener.PatternLockViewListener;
 
 import java.util.List;
 
+import vn.edu.tdc.nhom2.nhatky.Models.Preferences;
 import vn.edu.tdc.nhom2.nhatky.R;
 
 public class LockActivity extends AppCompatActivity {
@@ -40,5 +42,6 @@ public class LockActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         patternLockView = findViewById(R.id.pattern_lock_view);
         patternLockView.addPatternLockListener(patternLockViewListener);
+        Log.d("test", Preferences.getLockCode(this));
     }
 }
