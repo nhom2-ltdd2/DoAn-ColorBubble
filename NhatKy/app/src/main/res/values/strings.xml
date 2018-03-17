@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Nhat Ky</string>
+    <string name="lock_txt_no">VUI LÒNG ĐẶT HÌNH KHÓA</string>
+    <string name="lock_txt_yes">VẼ HÌNH ĐỂ MỞ KHÓA</string>
+    <string name="lock_btn_next">TIẾP TỤC</string>
 </resources>
