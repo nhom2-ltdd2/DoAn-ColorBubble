@@ -9,7 +9,9 @@
     android:orientation="vertical"
     tools:context="vn.edu.tdc.nhom2.nhatky.Activities.LockActivity">
 
+
     <TextView
+        android:id="@+id/txt_info"
         style="@style/lock_txt"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -24,15 +26,35 @@
         <com.andrognito.patternlockview.PatternLockView
             android:id="@+id/pattern_lock_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:correctStateColor="@color/correct"
+            app:wrongStateColor="@color/wrong"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_next"
-        style="@style/lock_btn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lock_btn_next" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btn_prev"
+            style="@style/lock_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/lock_btn_prev"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/lock_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lock_btn_next"
+            android:enabled="false"/>
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Nhat Ky</string>
     <string name="lock_txt_no">VUI LÒNG ĐẶT HÌNH KHÓA</string>
+    <string name="lock_txt_next">VẼ LẠI HÌNH KHÓA</string>
     <string name="lock_txt_yes">VẼ HÌNH ĐỂ MỞ KHÓA</string>
+    <string name="lock_txt_err">HÌNH KHÓA KHÔNG TRÙNG KHỚP</string>
+    <string name="lock_txt_ne">HÌNH MỞ KHÓA KHÔNG ĐÚNG</string>
+    <string name="lock_txt_length">HÃY NỐI ÍT NHẤT 4 ĐIỂM</string>
     <string name="lock_btn_next">TIẾP TỤC</string>
+    <string name="lock_btn_prev">QUAY LẠI</string>
+    <string name="lock_btn_fin">HOÀN TẤT</string>
 </resources>
