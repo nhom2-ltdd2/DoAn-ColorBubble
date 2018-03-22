@@ -1,4 +1,4 @@
-# DoAn-NhatKy
+# DoAn-ColorBubble
 ## Danh sách thành viên nhóm 2
 * Huỳnh Nhật Minh Tiến (Leader)
 * Nguyễn Cao Phước (Tester)
