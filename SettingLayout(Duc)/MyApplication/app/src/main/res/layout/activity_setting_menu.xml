@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <TextView
+            android:id="@+id/edt_connect"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#7FFFD4"
+            android:layout_gravity="center"
+            android:text="Connection"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageButton
+                android:id="@+id/fb_conn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/facebookbutton"
+                />
+            <com.dd.CircularProgressButton
+                android:id="@+id/cpbmoregame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:paddingRight="10dp"
+                app:cpb_cornerRadius="2dp"
+                app:cpb_textIdle="More Game"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/duongvien_goc"
+        >
+
+        <ToggleButton
+            android:id="@+id/btn_sound"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/toggle_switch"
+            android:textOff=""
+            android:textOn=""
+            />
+
+        <TextView
+            android:id="@+id/edt_sound"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="#3BB9FF"
+            android:text="Sound On"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/duongvien_goc"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/btn_music"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/toggle_switch"
+            android:textOff=""
+            android:textOn=""
+            />
+
+        <TextView
+            android:id="@+id/edt_music"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Music On"
+            android:textColor="#3BB9FF"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/duongvien_goc"
+        >
+
+        <ToggleButton
+            android:id="@+id/btn_tutorial"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/toggle_switch"
+            android:textOff=""
+            android:textOn=""
+            />
+
+        <TextView
+            android:id="@+id/edt_tutorial"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:textColor="#3BB9FF"
+            android:text="Tutorial On"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/cpbhowtp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            app:cpb_cornerRadius="48dp"
+            app:cpb_textIdle="How to play"
+            android:textColor="#FFFFFF"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            />
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/cpbAboutus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cpb_cornerRadius="48dp"
+            app:cpb_textIdle="About Us"
+            android:textColor="#FFFFFF"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="23dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center"
+        >
+        <com.dd.CircularProgressButton
+            android:id="@+id/cpbApply"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cpb_cornerRadius="48dp"
+            app:cpb_textError=""
+            app:cpb_textComplete="Saved! Close"
+            app:cpb_textIdle="Apply"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
