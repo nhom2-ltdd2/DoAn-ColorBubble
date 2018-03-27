@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat.NoActionBar">
+   <FrameLayout
+
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="6"
+       android:background="@color/green1">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="GAME OVER !!!"
+           android:background="@color/green1"
+           android:textSize="30dp"
+           android:gravity="center"/>
+
+   </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@color/green2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Score : 100"
+            android:background="@color/green2"
+            android:textSize="20dp"
+            android:gravity="center"/>
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@color/green3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Your best : 10.000"
+            android:background="@color/green3"
+            android:textSize="20dp"
+            android:gravity="center"/>
+    </FrameLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="@color/green1"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="Play Again"
+            android:background="@color/green1"
+            android:layout_marginTop="50dp"></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="Share your score"
+            android:background="@color/green1"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
