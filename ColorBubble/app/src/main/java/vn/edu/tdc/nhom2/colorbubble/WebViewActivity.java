@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -21,15 +23,16 @@ public class WebViewActivity extends AppCompatActivity {
         webView = findViewById(R.id.game);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new JsInterface(), "Android");
-//        webView.loadUrl("file:///android_asset/index.html");
-        webView.loadUrl("http://192.168.1.18:8080");
+        webView.getSettings().setAppCacheEnabled(false);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webView.loadUrl("file:///android_asset/index.html");
+//        webView.loadUrl("http://192.168.1.18:8080");
     }
 
     class JsInterface extends Object {
         @JavascriptInterface
-        public void consoleLog(String log) {
-            Log.d("aaa", log);
-//            webView.loadUrl("http://192.168.1.18:8080");
+        public void gameOver(int score, int time) {
+            Toast.makeText(WebViewActivity.this, "Score: " + score + ", time: " + time, Toast.LENGTH_LONG).show();
         }
     }
 }

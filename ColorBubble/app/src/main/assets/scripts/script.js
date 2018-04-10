@@ -1,12 +1,16 @@
 $(document).ready(function () {
-    var elem, core, frame, screen, oBubble, sizeBubble, stack, touch, countBubble, stats, canSwipe;
+    var elem, core, frame, screen, oBubble, sizeBubble, stack, touch, countBubble, stats, canSwipe, info, level;
 
     stack = [[], [], [], [], []];
 
     elem = {
         game: $('#game'),
         control: $('#control'),
-        reload: $('#reload')
+        left: $('.left'),
+        right: $('.right'),
+        score: $('.score'),
+        time: $('.time'),
+        pause: $('.pause')
     }
 
     screen = {
@@ -36,6 +40,21 @@ $(document).ready(function () {
         }
     })
 
+    elem.left.click(function (e) {
+        swipe(false);
+    })
+
+    elem.right.click(function (e) {
+        swipe(true);
+    })
+
+    elem.pause.click(function (e) {
+        stats = !stats;
+        if (stats) {
+            loop();
+        }
+    })
+
     function init() {
         frame = 0;
         oBubble = [];
@@ -46,12 +65,24 @@ $(document).ready(function () {
             y: null,
             time: null
         }
+        info = {
+            score: 0,
+            time: 0
+        }
+        level = {
+            speed: 10
+        }
         loop();
     }
 
     function loop() {
         core = setTimeout(function () {
-            if (frame === 60) {
+            if (frame === 20) {
+                info.time++;
+                elem.time.text(info.time);
+                if (info.time % 30 === 0) {
+                    level.speed++;
+                }
                 frame = 0;
             }
             if (oBubble.length === 0) {
@@ -65,7 +96,7 @@ $(document).ready(function () {
             if (stats) {
                 loop();
             }
-        }, 17);
+        }, 50);
     }
 
     function pInt(obj) {
@@ -77,8 +108,10 @@ $(document).ready(function () {
 
     function initBubble() {
         canSwipe = true;
-        var type = Math.round(Math.random() * 3);
-        var column = Math.round(Math.random() * 4);
+        var type = Math.floor(Math.random() * 4);
+        type = (type === 4) ? 3 : type;
+        var column = Math.floor(Math.random() * 5);
+        column = (column === 5) ? 4 : column;
         var x = screen.width / 5 * column;
         var y = screen.height;
         elem.game.append('<div class="bubble' + type + '" style="left:' + x + 'px; top:' + y + 'px"></div>');
@@ -93,7 +126,7 @@ $(document).ready(function () {
         for (var i = 0; i < oBubble.length; i++) {
             var top = pInt(oBubble[i].elem).top;
             var left = pInt(oBubble[i].elem).left;
-            top -= 5;
+            top -= level.speed;
             oBubble[i].elem.attr('style', 'left:' + left + 'px; top:' + top + 'px');
         }
     }
@@ -111,6 +144,8 @@ $(document).ready(function () {
                     oBubble[i].elem.addClass('bubble' + oBubble[i].type);
                     dataCol[dataCol_l - 1].elem.remove();
                     dataCol.pop();
+                    info.score++;
+                    elem.score.text(info.score);
                 } else {
                     dataCol.push(oBubble[i]);
                     oBubble.splice(i, 1);
@@ -146,7 +181,7 @@ $(document).ready(function () {
             if (stack[i].length > countBubble) {
                 clearTimeout(core);
                 stats = false;
-                console.log('Over');
+                Android.gameOver(info.score, info.time);
             }
         }
     }
@@ -163,13 +198,15 @@ $(document).ready(function () {
                 for (var j = 0; j < 5; j++) {
                     stack[j][i].elem.remove();
                     stack[j].splice(i, 1);
-                    for (var k = 0; k < stack[j].length; k++) {
+                    for (var k = i; k < stack[j].length; k++) {
                         var top = pInt(stack[j][k].elem).top;
                         var left = pInt(stack[j][k].elem).left;
                         top -= sizeBubble;
                         stack[j][k].elem.attr('style', 'left:' + left + 'px; top:' + top + 'px');
                     }
                 }
+                info.score += 10;
+                elem.score.text(info.score);
             }
         }
     }
