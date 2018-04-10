@@ -1,6 +1,5 @@
 package vn.edu.tdc.nhom2.colorbubble;
 
-import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -45,7 +44,7 @@ public class GameActivity extends E3Activity {
 
     @Override
     public void onLoadResources() {
-        tt_bg = new AssetTexture("background.jpg", this);
-        texture = new AssetTexture("b1.png", this);
+        tt_bg = new AssetTexture("images/background.jpg", this);
+        texture = new AssetTexture("images/b1.png", this);
     }
 }
