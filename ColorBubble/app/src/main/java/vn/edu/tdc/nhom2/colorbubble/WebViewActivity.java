@@ -33,6 +33,7 @@ public class WebViewActivity extends AppCompatActivity {
     public class JsInterface {
         Context context;
         Intent intent;
+        Bundle bundle;
 
         public JsInterface(Context context) {
             this.context = context;
@@ -40,8 +41,11 @@ public class WebViewActivity extends AppCompatActivity {
 
         @JavascriptInterface
         public void gameOver(int score, int time) {
-            Toast.makeText(WebViewActivity.this, "Score: " + score + ", time: " + time, Toast.LENGTH_LONG).show();
+            bundle = new Bundle();
+            bundle.putInt("Score", score);
+            bundle.putInt("Time", time);
             intent = new Intent(context, Gameover.class);
+            intent.putExtra("Bundle", bundle);
             context.startActivity(intent);
         }
     }
