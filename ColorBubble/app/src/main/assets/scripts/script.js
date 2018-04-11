@@ -31,7 +31,7 @@ $(document).ready(function () {
         var x = e.changedTouches[0].clientX;
         var y = e.changedTouches[0].clientY;
         var time = Date.now();
-        if (Math.abs(touch.y - y) < 50 && Math.abs(touch.x - x) > 75 && time - touch.time < 500) {
+        if (Math.abs(touch.y - y) < 75 && Math.abs(touch.x - x) > 75 && time - touch.time < 500) {
             if (touch.x > x) {
                 swipe(false);
             } else {

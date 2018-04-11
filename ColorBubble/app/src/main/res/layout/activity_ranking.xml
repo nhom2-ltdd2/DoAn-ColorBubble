@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vn.edu.tdc.hello.MainActivity"
+    tools:context="vn.edu.tdc.nhom2.colorbubble.Ranking"
     android:background="@drawable/src5"
     android:orientation="vertical">
     <LinearLayout

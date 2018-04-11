@@ -1,8 +1,9 @@
 package vn.edu.tdc.nhom2.colorbubble;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
@@ -22,17 +23,26 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
         webView = findViewById(R.id.game);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.addJavascriptInterface(new JsInterface(), "Android");
+        webView.addJavascriptInterface(new JsInterface(this), "Android");
         webView.getSettings().setAppCacheEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.loadUrl("file:///android_asset/index.html");
 //        webView.loadUrl("http://192.168.1.18:8080");
     }
 
-    class JsInterface extends Object {
+    public class JsInterface {
+        Context context;
+        Intent intent;
+
+        public JsInterface(Context context) {
+            this.context = context;
+        }
+
         @JavascriptInterface
         public void gameOver(int score, int time) {
             Toast.makeText(WebViewActivity.this, "Score: " + score + ", time: " + time, Toast.LENGTH_LONG).show();
+            intent = new Intent(context, Gameover.class);
+            context.startActivity(intent);
         }
     }
 }
