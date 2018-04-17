@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    Android.gameStart();
     var elem, core, frame, screen, oBubble, sizeBubble, stack, touch, countBubble, stats, canSwipe, info, level;
 
     stack = [[], [], [], [], []];
@@ -146,6 +147,7 @@ $(document).ready(function () {
                     dataCol.pop();
                     info.score++;
                     elem.score.text(info.score);
+                    Android.gameStar();
                 } else {
                     dataCol.push(oBubble[i]);
                     oBubble.splice(i, 1);
@@ -207,6 +209,7 @@ $(document).ready(function () {
                 }
                 info.score += 10;
                 elem.score.text(info.score);
+                Android.gameHit();
             }
         }
     }
