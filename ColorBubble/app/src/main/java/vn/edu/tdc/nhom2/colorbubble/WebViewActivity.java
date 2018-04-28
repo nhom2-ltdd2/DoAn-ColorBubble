@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -28,8 +28,8 @@ public class WebViewActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new JsInterface(this), "Android");
         webView.getSettings().setAppCacheEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-//        webView.loadUrl("file:///android_asset/index.html");
-        webView.loadUrl("http://192.168.1.18:8080");
+        webView.loadUrl("file:///android_asset/index.html");
+//        webView.loadUrl("http://192.168.1.18:8080");
 
     }
 
@@ -73,6 +73,7 @@ public class WebViewActivity extends AppCompatActivity {
             bundle = new Bundle();
             bundle.putInt("Score", score);
             bundle.putInt("Time", time);
+            Log.d("a",bundle.getInt("Score") +"");
             intent = new Intent(context, Gameover.class);
             intent.putExtra("Bundle", bundle);
             context.startActivity(intent);
