@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">"ColorBalloons "</string>
+    <string name="Start">"START "</string>
+    <string name="Ranking">"RANKING "</string>
+    <string name="Settings">"SETTINGS "</string>
+    <string name="About">"ABOUT "</string>
+    <string name="Exit">"EXIT "</string>
+
+
+
+</resources>
