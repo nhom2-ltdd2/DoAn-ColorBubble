@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:fillAfter="true">
+
+    <!--Di chuyen bong den khung thanh-->
+    <translate
+        android:fromYDelta="0%p"
+        android:toYDelta="-140%p"
+        android:fromXDelta="0%p"
+        android:toXDelta="50%p"
+        android:duration="1000"
+        android:startOffset="300"/>
+
+    <!--Dong thoi zoom out qua bong-->
+    <scale
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="1000"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.35"
+        android:toYScale="0.35"
+        android:startOffset="300">
+    </scale>
+
+    <translate
+        android:fromYDelta="0%p"
+        android:toYDelta="30%p"
+        android:fromXDelta="0%p"
+        android:toXDelta="20%p"
+        android:duration="700"
+        android:startOffset="1000"/>
+
+    <scale
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="700"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.46"
+        android:toYScale="1.46"
+        android:startOffset="1700">
+    </scale>
+</set>

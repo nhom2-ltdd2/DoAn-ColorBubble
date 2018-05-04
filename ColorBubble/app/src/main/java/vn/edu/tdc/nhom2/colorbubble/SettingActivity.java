@@ -1,6 +1,7 @@
 package vn.edu.tdc.nhom2.colorbubble;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,11 +24,14 @@ public class SettingActivity extends AppCompatActivity {
     LinearLayout mylayout;
     AnimationDrawable animationDrawable;
 
+    SharedPreferences sharedPreferences;
+
     int progress = 75;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
         //hiệu ứng khi chuyển sang activity mới
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
@@ -44,10 +48,17 @@ public class SettingActivity extends AppCompatActivity {
         volumebar = (SeekBar) findViewById(R.id.volume_bar);
         edtvolume = (TextView) findViewById(R.id.volume_number);
 
-        //Mặc định là ON khi được mở
-        tbtnsound.setChecked(true);
-        tbtnmusic.setChecked(true);
-        tbtntutorial.setChecked(true);
+        //share preference
+        sharedPreferences = getSharedPreferences("datasetting" , MODE_PRIVATE);
+        //lấy giá trị share preference
+        tbtnsound.setChecked(sharedPreferences.getBoolean("sound",false));
+        edtsound.setText(sharedPreferences.getString("soundtext","Sound Off"));
+        tbtnmusic.setChecked(sharedPreferences.getBoolean("music",false));
+        edtmusic.setText(sharedPreferences.getString("musictext","Sound Off"));
+        tbtntutorial.setChecked(sharedPreferences.getBoolean("tutorial",false));
+        edttutorial.setText(sharedPreferences.getString("tutorialtext","Sound Off"));
+        progress = sharedPreferences.getInt("volume",100);
+        edtvolume.setText(progress+"");
 
         //khai báo các hàm xử lý
         soundClick();
@@ -67,6 +78,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 progress = i;
                 edtvolume.setText(""+progress+"%");
+                LuuVolume();
             }
 
             @Override
@@ -79,6 +91,12 @@ public class SettingActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private void LuuVolume()
+    {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("volume",progress);
+        editor.commit();
     }
     public void cirClick()
     {
@@ -136,10 +154,18 @@ public class SettingActivity extends AppCompatActivity {
                 {
                     edtsound.setText("Sound On");
                     edtsound.setTextColor(getResources().getColor(R.color.blue));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("sound", true);
+                    editor.putString("soundtext","Sound On");
+                    editor.commit();
                 }else
                 {
                     edtsound.setText("Sound Off");
                     edtsound.setTextColor(getResources().getColor(R.color.gray2));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("sound", false);
+                    editor.putString("soundtext","Sound Off");
+                    editor.commit();
                 }
             }
         });
@@ -154,10 +180,18 @@ public class SettingActivity extends AppCompatActivity {
                 {
                     edtmusic.setText("Music On");
                     edtmusic.setTextColor(getResources().getColor(R.color.blue));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("music", true);
+                    editor.putString("musictext","Music On");
+                    editor.commit();
                 }else
                 {
                     edtmusic.setText("Music Off");
                     edtmusic.setTextColor(getResources().getColor(R.color.gray2));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("music", false);
+                    editor.putString("musictext","Music Off");
+                    editor.commit();
                 }
             }
         });
@@ -172,10 +206,18 @@ public class SettingActivity extends AppCompatActivity {
                 {
                     edttutorial.setText("Tutorial On");
                     edttutorial.setTextColor(getResources().getColor(R.color.blue));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("tutorial", true);
+                    editor.putString("tutorialtext","Tutorial On");
+                    editor.commit();
                 }else
                 {
                     edttutorial.setText("Tutorial Off");
                     edttutorial.setTextColor(getResources().getColor(R.color.gray2));
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("tutorial", false);
+                    editor.putString("tutorialtext","Tutorial Off");
+                    editor.commit();
                 }
             }
         });
