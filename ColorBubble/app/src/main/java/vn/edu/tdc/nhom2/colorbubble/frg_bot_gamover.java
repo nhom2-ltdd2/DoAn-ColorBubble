@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import vn.edu.tdc.nhom2.colorbubble.Model.Database;
 import vn.edu.tdc.nhom2.colorbubble.Model.Score;
 import vn.edu.tdc.nhom2.colorbubble.adapter.adatapter;
 
@@ -29,8 +30,9 @@ public class frg_bot_gamover extends android.support.v4.app.Fragment {
 
         mPager = (ViewPager) view.findViewById(R.id.myfivepanelpager);
         ar = new ArrayList<>();
-        ar.add(new Score("vinh",100,100));
-        ar.add(new Score("vinh2",200,200));
+        Database data = new Database(getActivity());
+        ar = data.getAllScore();
+
         adatapter adapter = new adatapter(getContext(), ar);
 
 
