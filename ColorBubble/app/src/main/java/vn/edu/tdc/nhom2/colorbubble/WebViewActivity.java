@@ -29,7 +29,7 @@ public class WebViewActivity extends AppCompatActivity {
         webView.getSettings().setAppCacheEnabled(false);
         webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.loadUrl("file:///android_asset/index.html");
-//        webView.loadUrl("http://192.168.1.18:8080");
+//        webView.loadUrl("http://192.168.1.19:8080");
 
     }
 
@@ -54,14 +54,26 @@ public class WebViewActivity extends AppCompatActivity {
         }
 
         @JavascriptInterface
+        public void gamePause() {
+            mediaPlayer.pause();
+        }
+
+        @JavascriptInterface
+        public void gameConti() {
+            mediaPlayer.start();
+        }
+
+        @JavascriptInterface
         public void gameStar() {
             mpStar = MediaPlayer.create(context, R.raw.star);
+            mpStar.setVolume(0.5f,0.5f);
             mpStar.start();
         }
 
         @JavascriptInterface
         public void gameHit() {
             mpHit = MediaPlayer.create(context, R.raw.hit);
+            mpHit.setVolume(0.5f,0.5f);
             mpHit.start();
         }
 

@@ -11,7 +11,8 @@ $(document).ready(function () {
         right: $('.right'),
         score: $('.score'),
         time: $('.time'),
-        pause: $('.pause')
+        pause: $('#btn_pause'),
+        dialog: $('.dialog')
     }
 
     screen = {
@@ -23,36 +24,53 @@ $(document).ready(function () {
     countBubble = screen.height / sizeBubble;
 
     $(window)[0].addEventListener('touchstart', function (e) {
-        touch.x = e.touches[0].clientX;
-        touch.y = e.touches[0].clientY;
-        touch.time = Date.now();
+        if (stats) {
+            touch.x = e.touches[0].clientX;
+            touch.y = e.touches[0].clientY;
+            touch.time = Date.now();
+        }
     })
 
     $(window)[0].addEventListener('touchend', function (e) {
-        var x = e.changedTouches[0].clientX;
-        var y = e.changedTouches[0].clientY;
-        var time = Date.now();
-        if (Math.abs(touch.y - y) < 75 && Math.abs(touch.x - x) > 75 && time - touch.time < 500) {
-            if (touch.x > x) {
-                swipe(false);
-            } else {
-                swipe(true);
+        if (stats) {
+            var x = e.changedTouches[0].clientX;
+            var y = e.changedTouches[0].clientY;
+            var time = Date.now();
+            if (Math.abs(touch.y - y) < 150 && Math.abs(touch.x - x) > 75 && time - touch.time < 500) {
+                if (touch.x > x) {
+                    swipe(false);
+                } else {
+                    swipe(true);
+                }
             }
         }
     })
 
     elem.left.click(function (e) {
-        swipe(false);
+        if (stats) {
+            swipe(false);
+        }
     })
 
     elem.right.click(function (e) {
-        swipe(true);
+        if (stats) {
+            swipe(true);
+        }
     })
 
     elem.pause.click(function (e) {
         stats = !stats;
         if (stats) {
+            elem.pause.removeClass('conti');
+            elem.pause.addClass('pause');
+            elem.dialog.addClass('hide');
+            Android.gameConti();
             loop();
+        } else {
+            elem.dialog.removeClass('hide');
+            elem.pause.removeClass('pause');
+            elem.pause.addClass('conti');
+            Android.gamePause();
         }
     })
 
