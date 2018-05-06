@@ -1,9 +1,9 @@
 package vn.edu.tdc.nhom2.colorbubble.Model;
 
 public class Score {
-    private String name;
-    private int score;
-    private int time;
+    public String name;
+    public int score;
+    public int time;
 
     public Score() {
     }
@@ -37,4 +37,6 @@ public class Score {
     public void setTime(int time) {
         this.time = time;
     }
+
+
 }
