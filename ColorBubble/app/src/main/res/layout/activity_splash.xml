@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context="vn.edu.tdc.nhom2.colorbubble.HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="334dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:layout_weight="0.17" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.87"
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/angry_btn"
+
+            android:text="START"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button1"
+            android:shadowColor="#A8A8A8"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0" />
+
+        <Button
+            android:layout_marginBottom="10dp"
+
+
+            android:text="RANKING"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button1"
+            android:shadowColor="#A8A8A8"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"/>
+        <Button
+            android:layout_marginBottom="10dp"
+
+
+            android:text="SETTING"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button1"
+            android:shadowColor="#A8A8A8"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"/>
+        <Button
+            android:layout_marginBottom="10dp"
+
+
+            android:text="ABOUT"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button1"
+            android:shadowColor="#A8A8A8"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5" />
+
+        <Button
+
+
+            android:text="EXIT"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:background="@drawable/button1"
+            android:shadowColor="#A8A8A8"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>
+

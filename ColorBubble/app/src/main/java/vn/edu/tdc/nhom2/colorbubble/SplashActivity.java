@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     // do nothing
                 } finally {
-                    Intent intent = new Intent(SplashActivity.this, WebViewActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                     startActivity(intent);
 
                 }
