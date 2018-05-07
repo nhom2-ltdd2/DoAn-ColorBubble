@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/src9"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/txttitle"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:text="Name song"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/imghinh"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:background="@mipmap/cdicon"
+            />
+    </LinearLayout>
+    <SeekBar
+        android:id="@+id/sbtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        />
+    <TextView
+        android:id="@+id/txttimerun"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:text="00:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="110dp"
+        />
+    <TextView
+        android:id="@+id/txttimetotal"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:text="00:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="110dp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="19dp"
+    android:gravity="center"
+    >
+    <ImageButton
+        android:id="@+id/btnbackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+       android:src="@mipmap/backicon" />
+
+    <ImageButton
+        android:id="@+id/btnplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:background="@null"
+        android:src="@mipmap/playicon" />
+
+    <ImageButton
+        android:id="@+id/btnpause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:background="@null"
+        android:src="@mipmap/stopicon" />
+
+    <ImageButton
+        android:id="@+id/btnnext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:src="@mipmap/nexticon"
+        android:background="@null" />
+</LinearLayout>
+</RelativeLayout>
