@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">About</string>
+    <string name="ten_game">- Tên game: Color balloons</string>
+    <string name="chucnang">- Các chức năng chính: </string>
+    <string name="about1">-- UI đẹp và đơn giản, hình ảnh động    trơn tru.</string>
+    <string name="about2">-- Hỗ trợ tất cả các thiết bị bao gồm    máy tính bảng.</string>
+    <string name="about3">-- Trò chơi được lưu tự động.</string>
+    <string name="about4">-- Cấu hình nhạy.</string>
+    <string name="about5">-- Giao diện người dùng đẹp mắt,    đơn giản và thân thiện.</string>
+    <string name="down">-- Lượt tải xuống: 100+</string>
+    <string name="npt">-- Nhà phát triển: Nhóm 2 - LTDD2</string>
+    <string name="back">Back</string>
+    <string name="action">Action</string>
+</resources>
