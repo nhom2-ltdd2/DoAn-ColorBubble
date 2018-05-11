@@ -5,8 +5,7 @@
     <string name="Settings">"SETTINGS "</string>
     <string name="About">"ABOUT "</string>
     <string name="Exit">"EXIT "</string>
-</resources>
-<resources>
+
     <string name="app_name">About</string>
     <string name="ten_game">- Tên game: Color balloons</string>
     <string name="chucnang">- Các ch?c nang chính: </string>
@@ -19,8 +18,7 @@
     <string name="npt">-- Nhà phát tri?n: Nhóm 2 - LTDD2</string>
     <string name="back">Back</string>
     <string name="action">Action</string>
-</resources>
-<resources>
+
     <string name="app_name">Instruction</string>
     <string name="ins1">- Ngu?i dùng có th? ch?m và kéo qu? bóng
                             sang trái ho?c sang ph?i d? cho qu? bóng có th? trùng màu. </string>
