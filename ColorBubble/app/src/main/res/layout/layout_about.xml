@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nen"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AboutActivity" >
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="About"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:textSize="35dp"
+            android:layout_gravity="center"
+            android:textColor="#FFFF00"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:id="@+id/txv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ten_game"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"
+            />
+
+        <TextView
+            android:id="@+id/txv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chucnang"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about1"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about2"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about3"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about4"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about5"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/npt"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+        <TextView
+            android:id="@+id/txv9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/down"
+            android:textSize="20dp"
+            android:textColor="#EEEE00"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/action" />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/back"
+            />
+
+
+
+    </LinearLayout>
+</LinearLayout>

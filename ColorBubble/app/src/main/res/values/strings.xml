@@ -6,3 +6,28 @@
     <string name="About">"ABOUT "</string>
     <string name="Exit">"EXIT "</string>
 </resources>
+<resources>
+    <string name="app_name">About</string>
+    <string name="ten_game">- Tên game: Color balloons</string>
+    <string name="chucnang">- Các ch?c nang chính: </string>
+    <string name="about1">-- UI d?p và don gi?n, hình ?nh d?ng    tron tru.</string>
+    <string name="about2">-- H? tr? t?t c? các thi?t b? bao g?m    máy tính b?ng.</string>
+    <string name="about3">-- Trò choi du?c luu t? d?ng.</string>
+    <string name="about4">-- C?u hình nh?y.</string>
+    <string name="about5">-- Giao di?n ngu?i dùng d?p m?t,    don gi?n và thân thi?n.</string>
+    <string name="down">-- Lu?t t?i xu?ng: 100+</string>
+    <string name="npt">-- Nhà phát tri?n: Nhóm 2 - LTDD2</string>
+    <string name="back">Back</string>
+    <string name="action">Action</string>
+</resources>
+<resources>
+    <string name="app_name">Instruction</string>
+    <string name="ins1">- Ngu?i dùng có th? ch?m và kéo qu? bóng
+                            sang trái ho?c sang ph?i d? cho qu? bóng có th? trùng màu. </string>
+    <string name="ins2">- N?u 2 qu? bóng trùng màu v?i nhau thì s? du?c di?m.</string>
+    <string name="kq1">- N?u 2 qu? bóng trùng màu v?i nhau thì ngu?i choi s? du?c 1 di?m.</string>
+    <string name="kq2">- N?u c? hàng trùng nhau thì ngu?i choi s? du?c 10 di?m.</string>
+    <string name="kq3">- Ngu?c l?i, n?u ngu?i dùng d? các qu? bóng tràn xu?ng cu?i màn hình thì thua cu?c.</string>
+    <string name="back">Back</string>
+    <string name="action">Action</string>
+</resources>
