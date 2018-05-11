@@ -1,11 +1,11 @@
-﻿package vn.edu.tdc.nhom2.colorbubble;
+package vn.edu.tdc.nhom2.colorbubble;
 
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.view.animation.AlphaAnimation;
-        import android.widget.Button;
-        import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class InstructionActivity extends AppCompatActivity {
 

@@ -1,11 +1,11 @@
-﻿package vn.edu.tdc.nhom2.colorbubble;
+package vn.edu.tdc.nhom2.colorbubble;
 
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.view.animation.AlphaAnimation;
-        import android.widget.Button;
-        import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.layout_about);
 
         Button Back;
-        Back = (Button)findViewById(R.id.back);
+        Back = (Button) findViewById(R.id.back);
 
         Back.setOnClickListener(new View.OnClickListener() {
 
@@ -52,13 +52,10 @@ public class AboutActivity extends AppCompatActivity {
         tv9 = (TextView) findViewById(R.id.txv9);
 
 
-
-        btn.setOnClickListener(new View.OnClickListener()
-        {
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 AlphaAnimation animation1 = new AlphaAnimation(0.0f, 1.0f);//0.0f là độ mờ cao nhất(không thấy gì cả), 1.0f là độ mờ nhỏ nhất(chữ bình thường)
                 animation1.setDuration(5000);// thời gian chữ bị mờ 5000 = 5 giây
                 animation1.setStartOffset(1500);// thời gian lặp lại(nếu có cho lặp)
