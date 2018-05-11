@@ -6,26 +6,26 @@
     <string name="About">"ABOUT "</string>
     <string name="Exit">"EXIT "</string>
 
-    <string name="app_name">About</string>
-    <string name="ten_game">- T�n game: Color balloons</string>
-    <string name="chucnang">- C�c ch?c nang ch�nh: </string>
-    <string name="about1">-- UI d?p v� don gi?n, h�nh ?nh d?ng    tron tru.</string>
-    <string name="about2">-- H? tr? t?t c? c�c thi?t b? bao g?m    m�y t�nh b?ng.</string>
-    <string name="about3">-- Tr� choi du?c luu t? d?ng.</string>
-    <string name="about4">-- C?u h�nh nh?y.</string>
-    <string name="about5">-- Giao di?n ngu?i d�ng d?p m?t,    don gi?n v� th�n thi?n.</string>
-    <string name="down">-- Lu?t t?i xu?ng: 100+</string>
-    <string name="npt">-- Nh� ph�t tri?n: Nh�m 2 - LTDD2</string>
+
+    <string name="ten_game">- Tên game: Color balloons</string>
+    <string name="chucnang">- Các chức năng chính: </string>
+    <string name="about1">-- UI đẹp và đơn giản, hình ảnh động    trơn tru</string>
+    <string name="about2">-- Hỗ trợ tất cả các thiết bị bao gồm    máy tính bảng.</string>
+    <string name="about3">-- Trò chơi được lưu tự động.</string>
+    <string name="about4">-- Cấu hình nhạy.</string>
+    <string name="about5">-- Giao diện người dùng đẹp mắt,    đơn giản và thân thiện.</string>
+    <string name="down">-- Lượt tải xuống: 100+</string>
+    <string name="npt">-- Nhà phát triển: Nhóm 2 - LTDD2</string>
     <string name="back">Back</string>
     <string name="action">Action</string>
 
-    <string name="app_name">Instruction</string>
-    <string name="ins1">- Ngu?i d�ng c� th? ch?m v� k�o qu? b�ng
-                            sang tr�i ho?c sang ph?i d? cho qu? b�ng c� th? tr�ng m�u. </string>
-    <string name="ins2">- N?u 2 qu? b�ng tr�ng m�u v?i nhau th� s? du?c di?m.</string>
-    <string name="kq1">- N?u 2 qu? b�ng tr�ng m�u v?i nhau th� ngu?i choi s? du?c 1 di?m.</string>
-    <string name="kq2">- N?u c? h�ng tr�ng nhau th� ngu?i choi s? du?c 10 di?m.</string>
-    <string name="kq3">- Ngu?c l?i, n?u ngu?i d�ng d? c�c qu? b�ng tr�n xu?ng cu?i m�n h�nh th� thua cu?c.</string>
-    <string name="back">Back</string>
-    <string name="action">Action</string>
+
+    <string name="ins1">- Người dùng có thể chạm và kéo quả bóng
+                            sang trái hoặc sang phải để cho quả bóng có thể trùng màu. </string>
+    <string name="ins2">- Nếu 2 quả bóng trùng màu với nhau thì sẽ được điểm.</string>
+    <string name="kq1">- Nếu 2 quả bóng trùng màu với nhau thì người chơi sẽ được 1 điểm.</string>
+    <string name="kq2">- Nếu cả hàng trùng nhau thì người chơi sẽ được 10 điểm.</string>
+    <string name="kq3">- Ngược lại, nếu người dùng để các quả bóng tràn xuống cuối màn hình thì thua cuộc.</string>
+    <string name="back1">Back</string>
+    <string name="action1">Action</string>
 </resources>
