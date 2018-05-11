@@ -1,4 +1,4 @@
-﻿package com.example.dark.instruction;
+﻿package vn.edu.tdc.nhom2.colorbubble;
 
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -12,7 +12,7 @@ public class InstructionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_main);
+        setContentView(R.layout.layout_instruction);
         Button Back;
         Back = (Button)findViewById(R.id.btnBack);
 
