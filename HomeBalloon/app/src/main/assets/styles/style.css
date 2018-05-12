@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/background.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+#game{
+    overflow: hidden;
+}
+
+#control, #game{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble0{
+    width: 20vw;
+    height: 20vw;
+    background: url('../images/b1.png');
+    position: absolute;
+    background-size: contain;
+}
+
+.bubble1{
+    width: 20vw;
+    height: 20vw;
+    background: url('../images/b2.png');
+    position: absolute;
+    background-size: contain;
+}
+
+.bubble2{
+    width: 20vw;
+    height: 20vw;
+    background: url('../images/b3.png');
+    position: absolute;
+    background-size: contain;
+}
+
+.bubble3{
+    width: 20vw;
+    height: 20vw;
+    background: url('../images/b4.png');
+    position: absolute;
+    background-size: contain;
+}
+
+#reload{
+    width: 50px;
+    height: 50px;
+    background: #FFF;
+}
+
+.left, .right{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    background: #666;
+    opacity: 0.5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    right: 125px;
+    bottom: 25px;   
+}
+
+.right{  
+    right: 25px;
+    bottom: 25px;
+}
+
+.left::after{
+    content: '';
+    border-right: 25px solid green;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+
+.right::after{
+    content: '';
+    border-left: 25px solid green;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.topBar p{
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 8px;
+}
+
+.pause{
+    width: 50px;
+    height: 50px;
+    background: url('../images/p.png');
+    position: absolute;
+    background-size: contain;
+    left: 10px;
+    bottom: 10px;
+}
+
+.conti{
+    width: 50px;
+    height: 50px;
+    background: url('../images/s.png');
+    position: absolute;
+    background-size: contain;
+    left: 10px;
+    bottom: 10px;
+}
+
+.dialog{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    height: 100%;
+    padding-top: 200px;
+    font-size: 64px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hide{
+    display: none;
+}
