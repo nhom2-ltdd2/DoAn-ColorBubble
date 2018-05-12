@@ -36,18 +36,15 @@ public class Gameover extends AppCompatActivity {
     Button cofirm;
     private Dialog dialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.gameover);
-
-
         Intent intent = getIntent();
-
         final Bundle bundle = intent.getBundleExtra("Bundle");
-
 
         final Database data = new Database(getApplicationContext());
 

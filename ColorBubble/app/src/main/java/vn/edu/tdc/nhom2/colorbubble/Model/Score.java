@@ -1,17 +1,27 @@
 package vn.edu.tdc.nhom2.colorbubble.Model;
 
 public class Score {
-    public String name;
+    public String name,hinh;
     public int score;
     public int time;
 
     public Score() {
     }
 
-    public Score(String name, int score, int time) {
+    public String getHinh() {
+        return hinh;
+    }
+
+    public void setHinh(String hinh) {
+        this.hinh = hinh;
+    }
+
+    public Score(String name, int score, int time, String hinh) {
         this.name = name;
         this.score = score;
         this.time = time;
+        this.hinh = hinh;
+
     }
 
     public String getName() {

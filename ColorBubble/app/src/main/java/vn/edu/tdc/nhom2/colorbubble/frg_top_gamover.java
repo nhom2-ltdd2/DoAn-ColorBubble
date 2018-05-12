@@ -18,7 +18,7 @@ public class frg_top_gamover extends android.support.v4.app.Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.frg_top_gameover, container, false);
         TextView score = (TextView)view.findViewById(R.id.score);
-        String strtext = "Your Score : "+ getArguments().getInt(" Score ")+"";
+        String strtext = "Your Score : "+ getArguments().getInt("Score")+"";
         score.setText(strtext);
         return view;
     }

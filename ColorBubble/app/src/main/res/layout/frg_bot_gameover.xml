@@ -22,25 +22,39 @@
         android:gravity="center"
         android:orientation="vertical"
         >
+
         <Button
+            android:layout_marginBottom="20dp"
             android:id="@+id/play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
 
             android:text="Play Again"
-            android:background="@color/green1"
-            android:layout_marginBottom="50dp"
-            ></Button>
-        <Button
-            android:id="@+id/menu"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:background="@drawable/button2"
+            android:shadowColor="@color/green3"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0" />
+        <Button
+            android:layout_marginBottom="10dp"
+            android:id="@+id/menu"
 
-            android:text="Main menu"
-            android:background="@color/green1"
-            />
+            android:text="Main Menu"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button2"
+            android:shadowColor="@color/green3"
+            android:gravity="center"
+            android:shadowDx="0"
+            android:shadowDy="0" />
+
+
     </LinearLayout>
 
 </LinearLayout>

@@ -39,8 +39,8 @@ public class SettingActivity extends AppCompatActivity {
 
         //ánh xạ
         cpbApply = (Button) findViewById(R.id.cpbApply);
-        cpbHTP = (Button) findViewById(R.id.cpbhowtp);
-        cpbAbout = (Button) findViewById(R.id.cpbAboutus);
+//        cpbHTP = (Button) findViewById(R.id.cpbhowtp);
+//        cpbAbout = (Button) findViewById(R.id.cpbAboutus);
         tbtnsound = (ToggleButton) findViewById(R.id.btn_sound);
         tbtnmusic = (ToggleButton) findViewById(R.id.btn_music);
         tbtntutorial = (ToggleButton) findViewById(R.id.btn_tutorial);
@@ -110,19 +110,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        cpbHTP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                htpDia(R.style.DialogSlideup);
-            }
-        });
 
-        cpbAbout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                aboutdia(R.style.DialogSlideleft);
-            }
-        });
     }
 
     //hàm xuất dialog của nút about us(thông tin của nhóm)

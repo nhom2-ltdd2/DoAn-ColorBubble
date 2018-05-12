@@ -3,7 +3,6 @@ package vn.edu.tdc.nhom2.colorbubble.adapter;
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +41,7 @@ public class adatapter extends PagerAdapter {
         TextView score = (TextView) itemView.findViewById(R.id.score);
         rank.setText(position + 1 + ".");
         name.setText(chuDe.getName());
-        score.setText(chuDe.getScore()+" p");
+        score.setText(chuDe.getScore()+"");
         container.addView(itemView);
 
         return itemView;
