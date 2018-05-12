@@ -43,7 +43,8 @@ public class Database extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
-    public ArrayList<Score> getAllScore(){
+
+    public ArrayList<Score> getAllScore() {
         ArrayList<Score> Scores = new ArrayList<Score>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_NAME;
@@ -67,11 +68,40 @@ public class Database extends SQLiteOpenHelper {
         // return contact list
         return Scores;
     }
+
+
+    public ArrayList<Score> getScore() {
+        ArrayList<Score> Scores = new ArrayList<Score>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME + " ORDER BY " + KEY_SCORE + " DESC LIMIT 5";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Score score = new Score();
+
+                score.setName(cursor.getString(1));
+                score.setScore(cursor.getInt(2));
+                score.setTime(cursor.getInt(3));
+                // Adding contact to list
+                Scores.add(score);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return Scores;
+    }
+
+
     public void deleteAllScore() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, null,null);
+        db.delete(TABLE_NAME, null, null);
         db.close();
     }
+
     public void addScore(Score score) {
         SQLiteDatabase db = this.getWritableDatabase();
 

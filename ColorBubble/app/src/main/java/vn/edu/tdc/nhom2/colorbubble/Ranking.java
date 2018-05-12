@@ -16,7 +16,7 @@ import vn.edu.tdc.nhom2.colorbubble.adapter.RankAdapter;
 public class Ranking extends AppCompatActivity {
     Database database;
     ImageView imgBackHome, imgSpeaker;
-    ArrayList<Score> listScore = new ArrayList<>();
+    ArrayList<Score> listScore;
     ListView listView;
     RankAdapter adapterRank;
 
@@ -29,13 +29,11 @@ public class Ranking extends AppCompatActivity {
         imgBackHome = (ImageView) findViewById(R.id.btn_backhome);
         imgSpeaker = (ImageView) findViewById(R.id.btn_volume);
         listView = (ListView) findViewById(R.id.lv_rank);
+        database = new Database(getApplicationContext());
+        listScore = database.getScore();
+        //hello cau
 
 
-        listScore.add(new Score("Lai",100,6));
-        listScore.add(new Score("sss",80,6));
-        listScore.add(new Score("đaa",55,6));
-        listScore.add(new Score("xxxx",45,6));
-        listScore.add(new Score("aaaaa",21,6));
         adapterRank = new RankAdapter(Ranking.this, R.layout.rank_custom, listScore);
         listView.setAdapter(adapterRank);
 
