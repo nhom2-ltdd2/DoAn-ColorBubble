@@ -103,7 +103,8 @@ public class SettingActivity extends AppCompatActivity {
         cpbApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SettingActivity.this,MainActivity.class));
+                //startActivity(new Intent(SettingActivity.this,MainActivity.class));
+                finish();
             }
         });
 

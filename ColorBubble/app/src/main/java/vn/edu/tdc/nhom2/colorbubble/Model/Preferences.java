@@ -23,4 +23,12 @@ public class Preferences {
         editor.putString("Name", input);
         editor.commit();
     }
+
+    private static SharedPreferences getPrefsSetting(Context context) {
+        return context.getSharedPreferences("datasetting", Context.MODE_PRIVATE);
+    }
+
+    public static String getQuery(Context context, String name) {
+        return getPrefsSetting(context).getString(name, "Null");
+    }
 }
