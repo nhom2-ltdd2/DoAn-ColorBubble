@@ -85,13 +85,7 @@
         android:layout_weight="1"
         android:gravity="center">
 
-        <Button
-            android:id="@+id/action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/action1" />
+
 
         <Button
             android:id="@+id/btnBack"
@@ -99,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/back1"
+            android:text="Play"
 
 
             />

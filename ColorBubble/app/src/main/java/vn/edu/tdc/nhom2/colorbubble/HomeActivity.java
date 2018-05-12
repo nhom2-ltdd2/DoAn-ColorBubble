@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 
+import vn.edu.tdc.nhom2.colorbubble.Model.Preferences;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,26 +20,35 @@ public class HomeActivity extends AppCompatActivity {
     private Button Exit_btn;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-        Start_btn = (Button) findViewById(R.id.Start_btn);
-        Ranking_btn = (Button) findViewById(R.id.Ranking_btn) ;
-        Setting_btn = (Button) findViewById(R.id.Setting_btn) ;
-        About_btn = (Button) findViewById(R.id.About_btn) ;
-        Exit_btn = (Button) findViewById(R.id.Exit_btn) ;
 
+
+        Start_btn = (Button) findViewById(R.id.Start_btn);
+        Ranking_btn = (Button) findViewById(R.id.Ranking_btn);
+        Setting_btn = (Button) findViewById(R.id.Setting_btn);
+        About_btn = (Button) findViewById(R.id.About_btn);
+        Exit_btn = (Button) findViewById(R.id.Exit_btn);
 
 
         Start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, WebViewActivity.class );
-                startActivity(intent);
+                String first = Preferences.getFirst(getApplicationContext());
+                if (first.equals("Null")) {
+                    Intent intent = new Intent(HomeActivity.this, InstructionActivity.class);
+                    Preferences.setFirst(getApplicationContext());
+                    startActivity(intent);
+
+                } else {
+                    Intent intent = new Intent(HomeActivity.this, WebViewActivity.class);
+                    startActivity(intent);
+                }
+
             }
 
 
@@ -45,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         Ranking_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, Ranking.class );
+                Intent intent = new Intent(HomeActivity.this, Ranking.class);
                 startActivity(intent);
             }
 
@@ -54,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         Setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, SettingActivity.class );
+                Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
 
@@ -63,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         About_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, AboutActivity.class );
+                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
 
@@ -73,8 +84,11 @@ public class HomeActivity extends AppCompatActivity {
         Exit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, Gameover.class );
-                startActivity(intent);
+
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startActivity(startMain);
+                finish();
             }
 
 

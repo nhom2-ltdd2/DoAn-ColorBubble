@@ -24,6 +24,17 @@ public class Preferences {
         editor.commit();
     }
 
+
+    public static String getFirst(Context context) {
+        return getPrefs(context).getString("First", "Null");
+    }
+
+    public static void setFirst(Context context) {
+        SharedPreferences.Editor editor = getPrefs(context).edit();
+        editor.putString("First", "1");
+        editor.commit();
+    }
+
     private static SharedPreferences getPrefsSetting(Context context) {
         return context.getSharedPreferences("datasetting", Context.MODE_PRIVATE);
     }

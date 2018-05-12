@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 public class SplashActivity extends AppCompatActivity {
 
     protected boolean _active = true;
-    protected int _splashTime = 1000;
+    protected int _splashTime = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

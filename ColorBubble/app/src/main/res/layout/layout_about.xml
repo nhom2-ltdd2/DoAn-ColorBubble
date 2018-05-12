@@ -117,13 +117,7 @@
         android:gravity="center">
 
 
-        <Button
-            android:id="@+id/action"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/action" />
+
         <Button
             android:id="@+id/back"
             android:layout_width="wrap_content"
