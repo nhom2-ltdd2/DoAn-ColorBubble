@@ -14,20 +14,23 @@
         android:theme="@style/AppTheme">
         <activity android:name=".GameActivity" />
         <activity android:name=".WebViewActivity" />
-        <activity android:name=".Gameover" />
+        <activity android:name=".Gameover" >
+
+        </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Ranking" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashScreen">
+        <activity android:name=".Ranking" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
 
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashScreen">
 
 
 
