@@ -1,11 +1,15 @@
 package vn.edu.tdc.nhom2.colorbubble.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,9 +43,14 @@ public class adatapter extends PagerAdapter {
         TextView rank = (TextView) itemView.findViewById(R.id.rank);
         TextView name = (TextView) itemView.findViewById(R.id.name);
         TextView score = (TextView) itemView.findViewById(R.id.score);
+        ImageView image = (ImageView) itemView.findViewById(R.id.image);
         rank.setText(position + 1 + ".");
         name.setText(chuDe.getName());
         score.setText(chuDe.getScore()+"");
+        if((chuDe.getHinh().equals("a"))){
+            image.setImageResource(R.drawable.ic_gooogleplay);
+        }
+        else image.setImageBitmap(covertToBitmap(chuDe.getHinh()));
         container.addView(itemView);
 
         return itemView;
@@ -60,5 +69,11 @@ public class adatapter extends PagerAdapter {
     @Override
     public Parcelable saveState() {
         return null;
+    }
+    private Bitmap covertToBitmap(String string1) {
+        byte[] decodedString = Base64.decode(string1, Base64.DEFAULT);
+
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
     }
 }

@@ -2,10 +2,13 @@ package vn.edu.tdc.nhom2.colorbubble;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
@@ -15,6 +18,16 @@ import android.webkit.WebView;
 public class WebViewActivity extends AppCompatActivity {
 
     WebView webView;
+    public static Bitmap getScreenshot() {
+        return screenshot;
+    }
+
+    public static void setScreenshot(Bitmap screenshot) {
+        WebViewActivity.screenshot = screenshot;
+    }
+
+    public static Bitmap screenshot ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +35,8 @@ public class WebViewActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_web_view);
+
+
 
         webView = findViewById(R.id.game);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -41,6 +56,7 @@ public class WebViewActivity extends AppCompatActivity {
         MediaPlayer mpHit;
         MediaPlayer mpStar;
         MediaPlayer mpFinish;
+        final View view = getWindow().getDecorView().findViewById(android.R.id.content);
 
         public JsInterface(Context context) {
             this.context = context;
@@ -82,13 +98,30 @@ public class WebViewActivity extends AppCompatActivity {
             mediaPlayer.pause();
             mpFinish = MediaPlayer.create(context, R.raw.finish);
             mpFinish.start();
+            setScreenshot(screenShot(view));
+
+//            String hinh = convertToBase64(screenShot(view));
+
             bundle = new Bundle();
             bundle.putInt("Score", score);
             bundle.putInt("Time", time);
+
             Log.d("a",bundle.getInt("Score") +"");
             intent = new Intent(context, Gameover.class);
             intent.putExtra("Bundle", bundle);
             context.startActivity(intent);
+
         }
     }
+
+    public Bitmap screenShot(View view) {
+
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),
+                view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+
 }

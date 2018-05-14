@@ -5,14 +5,19 @@
     android:layout_height="300dp"
     android:orientation="vertical"
     android:background="@color/green3">
-    <TextView
+    <LinearLayout
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Enter your name :"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/takeaphoto"
+            android:background="@color/green3"/>
+
+    </LinearLayout>
 
 
 

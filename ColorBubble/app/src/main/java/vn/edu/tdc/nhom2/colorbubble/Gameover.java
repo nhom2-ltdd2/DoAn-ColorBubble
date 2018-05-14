@@ -2,18 +2,22 @@ package vn.edu.tdc.nhom2.colorbubble;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,6 +27,8 @@ import vn.edu.tdc.nhom2.colorbubble.Model.Score;
 
 public class Gameover extends AppCompatActivity {
 
+    private static final int CAM_REQUEST = 1313;
+    Bitmap thumbnail;
     FragmentManager manager;
     FragmentTransaction transaction;
     FragmentManager manager1;
@@ -32,9 +38,14 @@ public class Gameover extends AppCompatActivity {
     ArrayList<Score> arr = new ArrayList<>();
     int Score;
     int Time;
+    String hinh;
     TextView text;
     Button cofirm;
-    private Dialog dialog;
+    private Dialog dialog ;
+
+    ImageView image;
+
+
 
 
     @Override
@@ -43,45 +54,41 @@ public class Gameover extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.gameover);
+        dialog = new Dialog(Gameover.this);;
+        dialog.setContentView(R.layout.dialog_entername);
+
+
+
         Intent intent = getIntent();
         final Bundle bundle = intent.getBundleExtra("Bundle");
 
         final Database data = new Database(getApplicationContext());
 
 
-        arr = data.getAllScore();
-        if (arr.size() == 0) {
-            data.addScore(new Score("Ravi", 10, 60));
-            data.addScore(new Score("Vinh", 9, 60));
-            data.addScore(new Score("Truong", 8, 60));
-            data.addScore(new Score("Tien", 7, 60));
-            data.addScore(new Score("Dat", 6, 60));
-            data.addScore(new Score("Khanh", 5, 60));
-            data.addScore(new Score("Tai", 4, 60));
-            data.addScore(new Score("Tuong", 3, 60));
-            data.addScore(new Score("Hau", 2, 60));
-            data.addScore(new Score("Hoa", 1, 60));
-            arr = data.getAllScore();
-        }
+
         Score = bundle.getInt("Score");
         Time = bundle.getInt("Time");
+        arr = data.getAllScore();
+
+
 
 
         if (Score > arr.get(9).getScore()) {
             arr.remove(9);
-            dialog = new Dialog(Gameover.this);
-            dialog.setContentView(R.layout.dialog_entername);
+
             text = (TextView) dialog.findViewById(R.id.input_name);
             cofirm = (Button) dialog.findViewById(R.id.cofirm);
+            image = (ImageView) dialog.findViewById(R.id.image);
+            image.setImageBitmap(WebViewActivity.getScreenshot());
             text.setGravity(Gravity.CENTER);
             dialog.setCancelable(false);
             dialog.setCanceledOnTouchOutside(false);
-            dialog.setTitle("Enter your name");
             dialog.show();
+
             cofirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    arr.add(new Score(text.getText().toString(), Score, Time));
+                    arr.add(new Score(text.getText().toString(), Score, Time,convertToBase64(WebViewActivity.getScreenshot())));
                     data.deleteAllScore();
                     Collections.sort(arr, new Comparator<Score>() {
                         @Override
@@ -146,6 +153,33 @@ public class Gameover extends AppCompatActivity {
 
 
     }
+
+//    @Override
+//    protected void onPostResume() {
+//
+//        dialog.show();
+//        super.onPostResume();
+//    }
+
+
+
+
+
+
+    private  String convertToBase64(Bitmap bm)
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+
+        byte[] byteArrayImage = baos.toByteArray();
+
+        String encodedImage = Base64.encodeToString(byteArrayImage, Base64.DEFAULT);
+
+        return encodedImage;
+
+    }
+
 
 
 }

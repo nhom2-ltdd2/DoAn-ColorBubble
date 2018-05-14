@@ -16,6 +16,7 @@ public class Database extends SQLiteOpenHelper {
     private String KEY_NAME = "Name";
     private String KEY_SCORE = "Score";
     private String KEY_TIME = "Time";
+    private String KEY_HINH = "Hinh";
 
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,7 +24,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String query = String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s INTEGER)", TABLE_NAME, KEY_ID, KEY_NAME, KEY_SCORE, KEY_TIME);
+        String query = String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s INTEGER, %s INTEGER, %s TEXT)", TABLE_NAME, KEY_ID, KEY_NAME, KEY_SCORE, KEY_TIME,KEY_HINH);
         sqLiteDatabase.execSQL(query);
     }
 
@@ -40,6 +41,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(KEY_NAME, score.getName());
         values.put(KEY_SCORE, score.getScore());
         values.put(KEY_TIME, score.getTime());
+        values.put(KEY_HINH, score.getHinh());
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
@@ -56,10 +58,10 @@ public class Database extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Score score = new Score();
-
                 score.setName(cursor.getString(1));
                 score.setScore(cursor.getInt(2));
                 score.setTime(cursor.getInt(3));
+                score.setHinh(cursor.getString(4));
                 // Adding contact to list
                 Scores.add(score);
             } while (cursor.moveToNext());
@@ -86,6 +88,7 @@ public class Database extends SQLiteOpenHelper {
                 score.setName(cursor.getString(1));
                 score.setScore(cursor.getInt(2));
                 score.setTime(cursor.getInt(3));
+                score.setHinh(cursor.getString(4));
                 // Adding contact to list
                 Scores.add(score);
             } while (cursor.moveToNext());
@@ -108,7 +111,8 @@ public class Database extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, score.getName()); // Contact Name
         values.put(KEY_SCORE, score.getScore());
-        values.put(KEY_TIME, score.getTime());// Contact Phone
+        values.put(KEY_TIME, score.getTime());
+        values.put(KEY_HINH, score.getHinh());// Contact Phone
 
         // Inserting Row
         db.insert(TABLE_NAME, null, values);
