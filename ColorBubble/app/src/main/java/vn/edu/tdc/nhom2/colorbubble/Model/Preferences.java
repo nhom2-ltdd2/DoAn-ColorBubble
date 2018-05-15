@@ -39,7 +39,19 @@ public class Preferences {
         return context.getSharedPreferences("datasetting", Context.MODE_PRIVATE);
     }
 
-    public static String getQuery(Context context, String name) {
-        return getPrefsSetting(context).getString(name, "Null");
+    public static boolean getQuery(Context context, String name) {
+        return getPrefsSetting(context).getBoolean(name, false);
+    }
+
+    public static void setQuery(Context context, String name, boolean value) {
+        SharedPreferences.Editor editor = getPrefsSetting(context).edit();
+        editor.putBoolean(name, value);
+        editor.commit();
+    }
+
+    public static void setQueryString(Context context, String name, String value) {
+        SharedPreferences.Editor editor = getPrefsSetting(context).edit();
+        editor.putString(name, value);
+        editor.commit();
     }
 }

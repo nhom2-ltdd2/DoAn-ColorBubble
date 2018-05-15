@@ -1,7 +1,7 @@
 $(document).ready(function () {
     Android.gameStart();
     var elem, core, frame, screen, oBubble, sizeBubble, stack, touch, countBubble, stats, canSwipe, info, level;
-
+    var dataSound = window.location.href.split('=')[1] === 'true' ? true : false;
     stack = [[], [], [], [], []];
 
     elem = {
@@ -12,7 +12,8 @@ $(document).ready(function () {
         score: $('.score'),
         time: $('.time'),
         pause: $('#btn_pause'),
-        dialog: $('.dialog')
+        dialog: $('.dialog'),
+        sound: $('#btn_sound')
     }
 
     screen = {
@@ -22,6 +23,12 @@ $(document).ready(function () {
 
     sizeBubble = screen.width / 5;
     countBubble = screen.height / sizeBubble;
+
+    if (dataSound) {
+        elem.sound.addClass('son');
+    } else {
+        elem.sound.addClass('soff');
+    }
 
     $(window)[0].addEventListener('touchstart', function (e) {
         if (stats) {
@@ -71,6 +78,20 @@ $(document).ready(function () {
             elem.pause.removeClass('pause');
             elem.pause.addClass('conti');
             Android.gamePause();
+        }
+    })
+
+    elem.sound.click(function (e) {
+        if (stats) {
+            dataSound = !dataSound;
+            Android.toggleSound();
+            if (dataSound) {
+                elem.sound.removeClass('soff');
+                elem.sound.addClass('son');
+            } else {
+                elem.sound.removeClass('son');
+                elem.sound.addClass('soff');
+            }
         }
     })
 
