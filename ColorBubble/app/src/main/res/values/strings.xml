@@ -7,7 +7,7 @@
     <string name="Exit">"EXIT "</string>
 
 
-    <string name="ten_game">- Tên game: Color balloons</string>
+    <string name="ten_game">- Tên game: Color Balloons</string>
     <string name="chucnang">- Các chức năng chính: </string>
     <string name="about1">-- UI đẹp và đơn giản, hình ảnh động    trơn tru</string>
     <string name="about2">-- Hỗ trợ tất cả các thiết bị bao gồm    máy tính bảng.</string>
@@ -20,12 +20,11 @@
     <string name="action">Action</string>
 
 
-    <string name="ins1">- Người dùng có thể chạm và kéo quả bóng
-                            sang trái hoặc sang phải để cho quả bóng có thể trùng màu. </string>
-    <string name="ins2">- Nếu 2 quả bóng trùng màu với nhau thì sẽ được điểm.</string>
-    <string name="kq1">- Nếu 2 quả bóng trùng màu với nhau thì người chơi sẽ được 1 điểm.</string>
-    <string name="kq2">- Nếu cả hàng trùng nhau thì người chơi sẽ được 10 điểm.</string>
-    <string name="kq3">- Ngược lại, nếu người dùng để các quả bóng tràn xuống cuối màn hình thì thua cuộc.</string>
+    <string name="ins1">Bạn có thể di chuyển quả bóng bằng cách vuốt sang 2 bên hoặc dùng 2 nút điều khiển trên màn hình</string>
+    <string name="ins2">Nếu 2 quả bóng trùng màu với nhau thì sẽ nhập lại thành 1 và bạn được +1 điểm</string>
+    <string name="kq1">Nếu cả hàng bóng trùng màu nhau thì hàng bóng ấy sẽ biến mất và bạn được +10 điểm</string>
+    <string name="kq2">Bạn sẽ thua cuộc khi quả bóng không còn chỗ bay lên và chạm vào đáy màn hình</string>
+    <string name="kq3">Chú ý: Tốc độ của những quả bóng sẽ tăng dần theo thời gian :))</string>
     <string name="back1">Back</string>
     <string name="action1">Action</string>
 </resources>

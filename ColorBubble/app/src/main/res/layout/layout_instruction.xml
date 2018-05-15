@@ -19,7 +19,7 @@
         >
 
         <TextView
-            android:text="Cách chơi"
+            android:text="Tutorial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -89,14 +89,21 @@
 
         <Button
             android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+
+
+            android:layout_width="270dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button1"
+
+            android:gravity="center"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
             android:text="Play"
-
-
-            />
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
     </LinearLayout>
 
 

@@ -44,9 +44,9 @@ public class InstructionActivity extends AppCompatActivity {
         tv4 = (TextView) findViewById(R.id.txv4);
         tv5 = (TextView) findViewById(R.id.txv5);
         AlphaAnimation animation1 = new AlphaAnimation(0.0f, 1.0f);//0.0f là độ mờ cao nhất(không thấy gì cả), 1.0f là độ mờ nhỏ nhất(chữ bình thường)
-        animation1.setDuration(5000);// thời gian chữ bị mờ 5000 = 5 giây
-        animation1.setStartOffset(1500);// thời gian lặp lại(nếu có cho lặp)
-        animation1.setRepeatCount(1);// Số lần lặp lại
+        animation1.setDuration(1000);// thời gian chữ bị mờ 5000 = 5 giây
+//        animation1.setStartOffset(1500);// thời gian lặp lại(nếu có cho lặp)
+//        animation1.setRepeatCount(1);// Số lần lặp lại
         tv1.startAnimation(animation1);
         tv2.startAnimation(animation1);
         tv3.startAnimation(animation1);

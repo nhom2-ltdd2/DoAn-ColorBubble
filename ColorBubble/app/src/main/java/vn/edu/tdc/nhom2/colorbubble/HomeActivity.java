@@ -38,10 +38,11 @@ public class HomeActivity extends AppCompatActivity {
         Start_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String first = Preferences.getFirst(getApplicationContext());
-                if (first.equals("Null")) {
+                boolean first = Preferences.getQuery(getApplicationContext(), "tutorial");
+                if (first) {
                     Intent intent = new Intent(HomeActivity.this, InstructionActivity.class);
-                    Preferences.setFirst(getApplicationContext());
+                    Preferences.setQuery(getApplicationContext(), "tutorial", false);
+                    Preferences.setQueryString(getApplicationContext(), "tutorialtext", "Tutorial Off");
                     startActivity(intent);
 
                 } else {

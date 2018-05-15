@@ -56,9 +56,9 @@ public class SettingActivity extends AppCompatActivity {
         tbtnsound.setChecked(sharedPreferences.getBoolean("sound",false));
         edtsound.setText(sharedPreferences.getString("soundtext","Sound Off"));
         tbtnmusic.setChecked(sharedPreferences.getBoolean("music",false));
-        edtmusic.setText(sharedPreferences.getString("musictext","Sound Off"));
-        tbtntutorial.setChecked(sharedPreferences.getBoolean("tutorial",false));
-        edttutorial.setText(sharedPreferences.getString("tutorialtext","Sound Off"));
+        edtmusic.setText(sharedPreferences.getString("musictext","Music Off"));
+        tbtntutorial.setChecked(sharedPreferences.getBoolean("tutorial",true));
+        edttutorial.setText(sharedPreferences.getString("tutorialtext","Tutorial On"));
         progress = sharedPreferences.getInt("volume",100);
         edtvolume.setText(progress+"");
 
