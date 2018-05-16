@@ -1,10 +1,14 @@
 package vn.edu.tdc.nhom2.colorbubble;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,6 +28,8 @@ public class Ranking extends AppCompatActivity {
     ArrayList<Score> listScore;
     ListView listView;
     RankAdapter adapterRank;
+    private Dialog dialog ;
+    ImageView image;
 
 
 
@@ -38,6 +44,8 @@ public class Ranking extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lv_rank);
         database = new Database(getApplicationContext());
         listScore = database.getScore();
+        dialog = new Dialog(Ranking.this);;
+        dialog.setContentView(R.layout.layou);
         //hello cau
 
 
@@ -45,6 +53,20 @@ public class Ranking extends AppCompatActivity {
         listView.setAdapter(adapterRank);
 
         listView.setOnItemLongClickListener(new  ItemOnClickRemove());
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                image = (ImageView) dialog.findViewById(R.id.hinh);
+                if((listScore.get(position).getHinh()).equals("a")){
+                    image.setImageResource(R.drawable.ic_gooogleplay);
+                }
+                else {
+                    image.setImageBitmap(covertToBitmap(listScore.get(position).getHinh()));
+                }
+                dialog.show();
+
+            }
+        });
 
 
 
@@ -85,6 +107,12 @@ public class Ranking extends AppCompatActivity {
             alertDialogBuilder.show();
             return true;
         }
+
+    }
+    private Bitmap covertToBitmap(String string1) {
+        byte[] decodedString = Base64.decode(string1, Base64.DEFAULT);
+
+        return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
     }
 }
