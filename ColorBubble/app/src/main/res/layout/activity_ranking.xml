@@ -1,94 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vn.edu.tdc.nhom2.colorbubble.Ranking"
     android:background="@drawable/src5"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="vn.edu.tdc.nhom2.colorbubble.Ranking">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-                <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ranking" />
-                <TextView
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:text="RANKING"
-                    android:textColor="@color/white"
-                    android:textSize="33dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/ranking" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="RANKING"
+                android:textColor="@color/white"
+                android:textSize="33dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
         <LinearLayout
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight="6"
             android:orientation="vertical">
+
             <LinearLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <TextView
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:text="Rank"
                         android:textColor="@color/white"
                         android:textSize="20dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
+
                     <ImageView
-                        android:layout_marginTop="35dp"
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/first"/>
-                    <ImageView
-                        android:layout_marginTop="35dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/first" />
+
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/second"/>
-                    <ImageView
-                        android:layout_marginTop="35dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/second" />
+
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/third"/>
-                    <ImageView
-                        android:layout_marginTop="35dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/third" />
+
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/fourth"/>
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/fourth" />
+
                     <ImageView
-                    android:layout_marginTop="35dp"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/fifth"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/fifth" />
 
                 </LinearLayout>
 
@@ -97,52 +109,57 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
+
                             <TextView
-                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:text="Name"
                                 android:textColor="@color/white"
                                 android:textSize="20dp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
+
                             <TextView
-                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:text="Score"
                                 android:textColor="@color/white"
                                 android:textSize="20dp"
-                                android:textStyle="bold"/>
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </LinearLayout>
+
                     <ListView
+                        android:id="@+id/lv_rank"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="9"
-                        android:id="@+id/lv_rank">
+                        android:layout_weight="9">
 
                     </ListView>
 
                 </LinearLayout>
             </LinearLayout>
-
 
 
         </LinearLayout>
@@ -155,20 +172,34 @@
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
-        <ImageView
-            android:id="@+id/btn_backhome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backhome1"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"/>
-        <ImageView
-            android:layout_marginTop="15dp"
-            android:id="@+id/btn_volume"
-            android:layout_marginLeft="250dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/clickvolume"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_backhome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/backhome1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/btn_volume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:src="@drawable/clickvolume"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

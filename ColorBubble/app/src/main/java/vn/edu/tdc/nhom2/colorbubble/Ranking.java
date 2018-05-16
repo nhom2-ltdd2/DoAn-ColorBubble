@@ -1,11 +1,14 @@
 package vn.edu.tdc.nhom2.colorbubble;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -41,6 +44,9 @@ public class Ranking extends AppCompatActivity {
         adapterRank = new RankAdapter(Ranking.this, R.layout.rank_custom, listScore);
         listView.setAdapter(adapterRank);
 
+        listView.setOnItemLongClickListener(new  ItemOnClickRemove());
+
+
 
         imgBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +55,36 @@ public class Ranking extends AppCompatActivity {
                 startActivity(backHomeScreen);
             }
         });
+
+    }
+    private class OnClickImage implements AdapterView.OnItemClickListener{
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+        }
+    }
+    private class ItemOnClickRemove implements AdapterView.OnItemLongClickListener{
+        @Override
+        public boolean onItemLongClick(AdapterView parent, View view, final int position, long id) {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Ranking.this);
+            alertDialogBuilder.setMessage("Bạn Có Muốn Xóa Không");
+            alertDialogBuilder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int which) {
+                    listScore.remove(position);
+                    adapterRank.notifyDataSetChanged();
+                    listScore = database.getScore();
+                }
+            });
+            alertDialogBuilder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int which) {
+
+                }
+            });
+            alertDialogBuilder.show();
+            return true;
+        }
 
     }
 }
